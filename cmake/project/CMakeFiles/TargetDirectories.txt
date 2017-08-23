@@ -1,0 +1,6 @@
+/home/william/Documents/myLinux/cmake/project/CMakeFiles/edit_cache.dir
+/home/william/Documents/myLinux/cmake/project/CMakeFiles/rebuild_cache.dir
+/home/william/Documents/myLinux/cmake/project/CMakeFiles/Demo.dir
+/home/william/Documents/myLinux/cmake/project/math/CMakeFiles/edit_cache.dir
+/home/william/Documents/myLinux/cmake/project/math/CMakeFiles/rebuild_cache.dir
+/home/william/Documents/myLinux/cmake/project/math/CMakeFiles/MathFunctions.dir
