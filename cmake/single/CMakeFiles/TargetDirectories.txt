@@ -1,0 +1,3 @@
+/home/william/CLionProjects/cmake/single/CMakeFiles/edit_cache.dir
+/home/william/CLionProjects/cmake/single/CMakeFiles/rebuild_cache.dir
+/home/william/CLionProjects/cmake/single/CMakeFiles/Demo.dir
