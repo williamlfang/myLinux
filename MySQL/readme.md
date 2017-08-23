@@ -7,7 +7,11 @@
 
 mysql --help | grep my.cnf
 
+## CentOS
 vim /etc/my.cnf
+
+## Ubuntu
+vim /etc/mysql/mysql.conf.d/mysqld.cnf
 
 service mysqld restart
 ```
@@ -16,9 +20,13 @@ service mysqld restart
 
     [mysqld]
     default-character-set=utf8
-    # default-character-set=gbk
-    #datadir=/var/lib/mysql
+
+    ##-------------------------------
+    ## 数据库路径
+    ## datadir=/var/lib/mysql
     datadir= /data/Database/mysql/
+    ##-------------------------------
+    
     #socket=/var/lib/mysql/mysql.sock
     socket=/data/Database/mysql/mysql.sock
     user=mysql
@@ -32,12 +40,10 @@ service mysqld restart
 
     [client]
     default-character-set=utf8
-    # default-character-set=gbk
     socket=/data/Database/mysql/mysql.sock
 
     [mysql]
     default-character-set=utf8
-    # default-character-set=gbk
     socket=/data/Database/mysql/mysql.sock
 
 
