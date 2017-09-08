@@ -14,6 +14,12 @@ vim /etc/my.cnf
 vim /etc/mysql/mysql.conf.d/mysqld.cnf
 
 service mysqld restart
+
+## 修改 utf8
+
+ALTER DATABASE databasename CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+ALTER TABLE tableaname CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 ```
 
 ### `my.cnf` 配置
