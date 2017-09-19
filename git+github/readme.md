@@ -4,7 +4,7 @@
 
 ```bash
 cd ~
-ssh-keygen -t rsa -C 'william.lian.fang@gmail.com'
+ssh-keygen -t rsa
 
 ## 复制 id_rsa.pub，上传到 github SSH
 
