@@ -19,4 +19,6 @@ vim /etc/fstab
 /home/swap swap swap default 0 0
 
 
+
+
 ```
