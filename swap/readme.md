@@ -17,4 +17,6 @@ vim /etc/fstab
 
 ## 在文件末尾（最后一行）加上
 /home/swap swap swap default 0 0
+
+
 ```
