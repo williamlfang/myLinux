@@ -4,7 +4,7 @@
 
 ```bash
 cd ~
-ssh-keygen -t rsa
+ssh-keygen -C 'william.lian.fang@gmail.com' -t rsa
 
 ## 复制 id_rsa.pub，上传到 github SSH
 
@@ -21,7 +21,7 @@ git config --global user.email william.lian.fang@gmail.com
 ```bash
 vim .git-credentials
 
-://{williamlfang}:{************}@github.com
+://{williamlfang}:{我的密码}@github.com
 ```
 
 ## 日常 `Git` 命令
@@ -52,7 +52,27 @@ git log
 
 ## 不需要输入账户
 git remote set-url origin https://williamlfang@github.com/williamlfang/myLinux.git
-
-
-
 ```
+
+## 不需要输入账户和密码
+
+1. 在 `/home/` 找到（建立） `.gitconfig`, 编辑
+
+        [user]
+            name = williamlfang
+            email = william.lian.fang@gmail.com
+        [push]
+            default = matching
+
+        [credential]
+            helper = store
+
+2. 找到（建立）`.git-credentials`，编辑
+
+        https://williamlfang:我的密码@github.com
+
+3. 在项目中建立 `.git-credentials`
+
+        ://{williamlfang}:{我的密码}@github.com
+
+这样，就可以通过 sublime 直接提交修改内容了。
