@@ -1,5 +1,7 @@
 sudo apt install terminator
 
+sudo apt install bleachbit
+
 sudo apt install sshpass
 
 sudo apt install synergy
