@@ -96,7 +96,6 @@
 ;; ===================
 (provide 'init-elpa)
 ;; ===================
-
 ```
 
 ### `init-themes`
@@ -108,11 +107,23 @@
 (load-theme 'atom-dark t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-; 添加行号显示
+;open linum mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq linum-format "%4d \u2502")
 (add-hook 'prog-mode-hook 'linum-mode)
 (add-hook 'ess-mode-hook 'linum-mode)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 隐藏状态栏、工具栏、滚动条
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+(scroll-bar-mode 0)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 最大化屏幕
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; ===================
 (provide 'init-themes)
