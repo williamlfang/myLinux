@@ -33,11 +33,91 @@
 引用的包需要在末尾添加以下命令，实现 `featuers` 的功能，即可在 `init.el` 通过使用 `(require 'init-themes)` 来获取：
 
 ```
+## 在 init.el 引用包
+(require 'init-themes)
+```
+
+```
+## 设置路径
+(add-to-list 'custom-theme-load-path "~/.emacs.d/lisp/themes/")
+
+## ...
+## 其他操作命令
+## ...
+
+## 在每个包添加一行
 (provide 'init-themes)
 ```
 
-### themes
+### 安装 package
 
+可以通过查找 [melpa.org](https://melpa.org/) 来查找需要的 packages。
+
+使用 `Mata-x package-install RET pkg_name` 进行安装。记得使用 `Tab` 键来自动补全。
+
+### `init-elpa`
+
+```
+;;;;;;;;;;;;;;;;;;;;;;;;;
+; install packages
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(when (>= emacs-major-version 24)
+    (require 'package)
+    (package-initialize)
+    (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t))
+
+;; cl - Common Lisp Extension
+(require 'cl)
+
+;; Add Packages
+(defvar my/packages '(
+            ;; 安装包列表
+            ;; 可以去 MELPA 查询
+            company
+            atom-dark-theme
+            markdown-mode+
+           ) "Default packages")
+
+(setq package-selected-packages my/packages)
+
+(defun my/packages-installed-p ()
+    (loop for pkg in my/packages
+      when (not (package-installed-p pkg)) do (return nil)
+      finally (return t)))
+
+(unless (my/packages-installed-p)
+    (message "%s" "Refreshing package database...")
+    (package-refresh-contents)
+    (dolist (pkg my/packages)
+      (when (not (package-installed-p pkg))
+    (package-install pkg))))
+
+;; ===================
+(provide 'init-elpa)
+;; ===================
+
+```
+
+### `init-themes`
+
+可以下载 [`one-dark-theme.el`](https://github.com/whitlockjc/atom-dark-theme-emacs) 到 `~/.emacs.d/lisp/themes/`
+
+```
+(add-to-list 'custom-theme-load-path "~/.emacs.d/lisp/themes/")
+(load-theme 'atom-dark t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+; 添加行号显示
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq linum-format "%4d \u2502")
+(add-hook 'prog-mode-hook 'linum-mode)
+(add-hook 'ess-mode-hook 'linum-mode)
+
+;; ===================
+(provide 'init-themes)
+;; ===================
+```
 
 
 
